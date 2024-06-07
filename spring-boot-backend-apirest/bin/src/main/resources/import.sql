@@ -1,0 +1,5 @@
+INSERT INTO abonados (dni, nombre, apellido1, apellido2, fecha_nacimiento, telefono, direccion, create_at) VALUES ('71790338R', 'Beni', 'Ruisanchez', 'Santoveña', '2001-06-13', 645769970, 'Tirso de Avilés', '2024-03-22');
+INSERT INTO abonados (dni, nombre, apellido1, apellido2, fecha_nacimiento, telefono, direccion, create_at) VALUES ('71790338R', 'Beni', 'Ruisanchez', 'Santoveña', '2001-06-13', 645769970, 'Tirso de Avilés', '2024-03-22');
+INSERT INTO abonados (dni, nombre, apellido1, apellido2, fecha_nacimiento, telefono, direccion, create_at) VALUES ('71790338R', 'Beni', 'Ruisanchez', 'Santoveña', '2001-06-13', 645769970, 'Tirso de Avilés', '2024-03-22');
+INSERT INTO abonados (dni, nombre, apellido1, apellido2, fecha_nacimiento, telefono, direccion, create_at) VALUES ('71790338R', 'Beni', 'Ruisanchez', 'Santoveña', '2001-06-13', 645769970, 'Tirso de Avilés', '2024-03-22');
+INSERT INTO abonados (dni, nombre, apellido1, apellido2, fecha_nacimiento, telefono, direccion, create_at) VALUES ('71790338R', 'Beni', 'Ruisanchez', 'Santoveña', '2001-06-13', 645769970, 'Tirso de Avilés', '2024-03-22');

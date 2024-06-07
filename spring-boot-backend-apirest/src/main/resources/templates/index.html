@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+
+<section class="col-lg-auto mt-3 mt-lg-0">
+					    <section class="text-end" th:if="${user == null}">
+							<span sec:authorize="isAuthenticated()">Estoy autenticado</span>
+					    </section>
+					
+					</html>
