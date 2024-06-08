@@ -104,7 +104,7 @@ public class ReservaRestController {
 		mav.addObject("rol", usuario.getRol().getNombre());
 		mav.addObject("reserva", reservaService.findById(id));
 		mav.addObject("pistas", pistaService.findByEstado("ACTIVA"));
-		mav.addObject("abonados", abonadoService.findAll());
+		mav.addObject("abonado", abonadoDao.findAbonadoByUsername(username));
 		mav.addObject("horas", tipoHoraService.findAll());
 		mav.addObject("tipoPistas", tipoPistaService.findAll());
 		mav.addObject("id", id);
@@ -119,7 +119,7 @@ public class ReservaRestController {
 		mav.addObject("rol", usuario.getRol().getNombre());
 		mav.addObject("reserva", new ReservaDto());
 		mav.addObject("pistas", pistaService.findByEstado("ACTIVA"));
-		mav.addObject("abonados", abonadoService.findAll());
+		mav.addObject("abonado", abonadoDao.findAbonadoByUsername(username));
 		mav.addObject("horas", tipoHoraService.findAll());
 		mav.addObject("tipoPistas", tipoPistaService.findAll());
 		return mav;

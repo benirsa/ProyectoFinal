@@ -151,6 +151,7 @@ public class ReservaServiceImpl implements IReservaService{
 	@Override
 	@Transactional
 	public ReservaDto update(ReservaDto reservaDto, Long id) {
+		System.out.println(reservaDto);
 		// TODO Auto-generated method stub
 		Reserva reserva = reservaMapper.dtoToEntity(reservaDto);
 		TipoHoraDto tipoHoraDto = tipoHoraService.findById(reservaDto.getIdTipoHora());

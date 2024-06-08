@@ -87,7 +87,7 @@ public class UsuarioRestController {
 	@PostMapping("/modificar/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public String update(@RequestBody TrabajadorDto usuario, @PathVariable Long id) {
-		 trabajadorService.update(usuario, id);
+		trabajadorService.update(usuario, id);
 		return "redirect:/usuarios/lista";
 	}
 	

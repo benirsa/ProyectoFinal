@@ -69,8 +69,8 @@
 				</section>
 				<section class="row form-group">
 					<label for="abonado" class="col-sm-2 col-form-label">Abonado:</label>
-					<select class="form-select" name="abonado" id="abonado" th:field="*{idAbonado}" disabled>
-						<option th:each="abonado : ${abonados}" th:text="${abonado.dni}" th:value="${abonado.id}">
+					<select class="form-select" name="abonado" id="abonado" th:field="*{idAbonado}">
+						<option th:text="${abonado.dni}" th:value="${abonado.id}">
 						</option>
 					</select>
 				</section>
