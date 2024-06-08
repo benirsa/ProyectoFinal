@@ -5,4 +5,5 @@ INSERT INTO public.pistas (id_tipo_pista,estado,techado,create_at) VALUES
 	 (3,'ACTIVA',true,NULL),
 	 (3,'MANTENIMIENTO',true,NULL),
 	 (4,'ACTIVA',true,NULL),
-	 (4,'MANTENIMIENTO',true,NULL);
+	 (4,'MANTENIMIENTO',true,NULL),
+	 (3,'MANTENIMIENTO',true,'2024-06-07');

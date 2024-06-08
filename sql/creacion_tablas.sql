@@ -38,6 +38,23 @@ CREATE TABLE public.tipo_pista (
 );
 
 
+-- public.pistas definition
+
+-- Drop table
+
+-- DROP TABLE public.pistas;
+
+CREATE TABLE public.pistas (
+	id serial4 NOT NULL,
+	id_tipo_pista int4 NULL,
+	estado varchar(13) NULL,
+	techado bool NULL,
+	create_at date NULL,
+	CONSTRAINT pistas_pk PRIMARY KEY (id),
+	CONSTRAINT pistas_tipo_pista_fk FOREIGN KEY (id_tipo_pista) REFERENCES public.tipo_pista(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
 -- public.usuarios definition
 
 -- Drop table
@@ -76,23 +93,6 @@ CREATE TABLE public.abonados (
 );
 
 
--- public.pistas definition
-
--- Drop table
-
--- DROP TABLE public.pistas;
-
-CREATE TABLE public.pistas (
-	id serial4 NOT NULL,
-	id_tipo_pista int4 NULL,
-	estado varchar(13) NULL,
-	techado bool NULL,
-	create_at date NULL,
-	CONSTRAINT pistas_pk PRIMARY KEY (id),
-	CONSTRAINT pistas_tipo_pista_fk FOREIGN KEY (id_tipo_pista) REFERENCES public.tipo_pista(id) ON DELETE CASCADE ON UPDATE CASCADE
-);
-
-
 -- public.reservas definition
 
 -- Drop table
@@ -121,7 +121,7 @@ CREATE TABLE public.reservas (
 -- DROP TABLE public.trabajadores;
 
 CREATE TABLE public.trabajadores (
-	id serial4 NOT NULL,
+	id int4 DEFAULT nextval('usuarios_id_seq'::regclass) NOT NULL,
 	dni varchar(9) NOT NULL,
 	nombre varchar(50) NULL,
 	apellido1 varchar(50) NULL,
