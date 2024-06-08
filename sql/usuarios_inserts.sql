@@ -1,3 +1,5 @@
+-- Las contraseñas están cifradas, para iniciar sesión, introduca contraUsuario por ejemplo contraAdmin, esto es así
+-- para todos los usuarios excepto para el trabajador que su contraseña es trabajador
 INSERT INTO public.usuarios (usuario,contrasena,id_rol) VALUES
 	 ('pedro','$2a$10$hyzmoWvPrD6tUrTuwvhuz.wpmfgqWBG2wQfPquALlO2h0UFyUBBUm',3),
 	 ('luis','$2a$10$1oO0T6Fp/YQehyhvasYoBusrDe7bCgGXz2Xi6dlK8g1VCvySDS3bW',3),
