@@ -116,11 +116,11 @@ public class UsuarioServiceImpl implements IUsuarioService {
 			usuario.setPassword(encriptador.encode(usuario.getPassword()));
 			usuarioDao.save(usuario);
 			mav = new ModelAndView("redirect:/login");
-			mav.addObject("mensaje", "Se ha registrado al usuario con éxito");
+			mav.addObject("error", "Se ha registrado al usuario con éxito");
 		}
 		else {
 			mav = new ModelAndView("redirect:/registro");
-			mav.addObject("mensaje", "El usuario ya existe");
+			mav.addObject("error", "El usuario ya existe");
 		}
 		
 		return mav;

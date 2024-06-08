@@ -31,7 +31,8 @@
 		<section class="collapse navbar-collapse" id="menu">
 			<nav class="navbar-nav mx-2">
 				<a th:if="${rol == 'ABONADO'}" href="/pistas/lista/abonado" class="nav-link text-white">Pistas</a>
-				<a th:if="${rol == 'ADMIN' or rol == 'TRABAJADOR'}" href="/pistas/lista/abonado" class="nav-link text-white">Pistas</a>
+				<a th:if="${rol == 'ADMIN' or rol == 'TRABAJADOR'}" href="/pistas/lista"
+					class="nav-link text-white">Pistas</a>
 				<a th:if="${rol == 'ABONADO'}" href="/reservas/lista/abonado" class="nav-link text-white">Reservas</a>
 				<a th:if="${rol == 'ADMIN' or rol == 'TRABAJADOR'}" href="/reservas/lista"
 					class="nav-link text-white">Reservas</a>
@@ -54,24 +55,24 @@
 			<section class="bg-secondary">
 				<section class="row form-group">
 					<label for="descripcion" class="col-sm-2 col-form-label">Descripción:</label>
-					<input type="text" id="descripcion" class="col-sm-8 form-control form-control-sm"
+					<input type="text" maxlength="50" id="descripcion" class="col-sm-8 form-control form-control-sm"
 						th:field="*{descripcion}" required />
 				</section>
 				<section class="row form-group">
 					<label for="precio" class="col-sm-2 col-form-label">Precio:</label>
-					<input type="number" id="precio" class="col-sm-8 form-control form-control-sm" th:field="*{precio}"
-						required />
+					<input type="number" pattern="^\d+(\.\d+)?$" id="precio"
+						class="col-sm-8 form-control form-control-sm" th:field="*{precio}" required />
 				</section>
 			</section>
 			<section class="form-group my-2">
-				<button type="button" class="col-sm-1 mx-1 btn btn-primary btn-sm" id="btnGuardar">Guardar</button>
+				<button type="submit" class="col-sm-1 mx-1 btn btn-primary btn-sm" id="btnGuardar">Guardar</button>
 				<a class="col-sm-1 mx-1 btn btn-danger btn-sm" href="/tipo-pista/lista">Cancelar</a>
 			</section>
 		</form>
 	</main>
 
 	<script th:inline="javascript">
-		$('#btnGuardar').click(function () {
+		document.getElementById('tipoPistaFrom').addEventListener('submit', function () {
 			const form = document.getElementById('tipoPistaForm');
 			const formData = new FormData(form);
 			const object = {};

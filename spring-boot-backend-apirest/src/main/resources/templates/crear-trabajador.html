@@ -30,7 +30,7 @@
 		<section class="collapse navbar-collapse" id="menu">
 			<nav class="navbar-nav mx-2">
 				<a th:if="${rol == 'ABONADO'}" href="/pistas/lista/abonado" class="nav-link text-white">Pistas</a>
-				<a th:if="${rol == 'ADMIN' or rol == 'TRABAJADOR'}" href="/pistas/lista/abonado" class="nav-link text-white">Pistas</a>
+				<a th:if="${rol == 'ADMIN' or rol == 'TRABAJADOR'}" href="/pistas/lista" class="nav-link text-white">Pistas</a>
 				<a th:if="${rol == 'ABONADO'}" href="/reservas/lista/abonado" class="nav-link text-white">Reservas</a>
 				<a th:if="${rol == 'ADMIN' or rol == 'TRABAJADOR'}" href="/reservas/lista"
 					class="nav-link text-white">Reservas</a>
@@ -53,22 +53,22 @@
 			<section class="bg-secondary">
 				<section class="row form-group">
 					<label for="dni" class="col-sm-2 col-form-label">DNI:</label>
-					<input type="text" id="dni" class="col-sm-8 form-control form-control-sm" th:field="*{dni}"
+					<input pattern="^[0-9]{8}[A-Za-z]$" type="text" id="dni" class="col-sm-8 form-control form-control-sm" th:field="*{dni}"
 						required />
 				</section>
 				<section class="row form-group">
 					<label for="nombre" class="col-sm-2 col-form-label">Nombre:</label>
-					<input type="text" id="nombre" class="col-sm-8 form-control form-control-sm" th:field="*{nombre}"
+					<input type="text" maxlength="50" id="nombre" class="col-sm-8 form-control form-control-sm" th:field="*{nombre}"
 						required />
 				</section>
 				<section class="row form-group">
 					<label for="apellido1" class="col-sm-2 col-form-label">Apellido 1:</label>
-					<input type="text" id="apellido1" class="col-sm-8 form-control form-control-sm"
+					<input type="text" maxlength="50" id="apellido1" class="col-sm-8 form-control form-control-sm"
 						th:field="*{apellido1}" required />
 				</section>
 				<section class="row form-group">
 					<label for="apellido2" class="col-sm-2 col-form-label">Apellido 2:</label>
-					<input type="text" id="apellido2" class="col-sm-8 form-control form-control-sm"
+					<input type="text" maxlength="50" id="apellido2" class="col-sm-8 form-control form-control-sm"
 						th:field="*{apellido2}" required />
 				</section>
 				<section class="row form-group">
@@ -78,17 +78,17 @@
 				</section>
 				<section class="row form-group">
 					<label for="telefono" class="col-sm-2 col-form-label">Telefono:</label>
-					<input type="text" id="telefono" class="col-sm-8 form-control form-control-sm"
+					<input type="text" maxlength="50" id="telefono" class="col-sm-8 form-control form-control-sm"
 						th:field="*{telefono}" required />
 				</section>
 				<section class="row form-group">
 					<label for="username" class="col-sm-2 col-form-label">Usuario:</label>
-					<input type="text" id="username" class="col-sm-8 form-control form-control-sm"
+					<input type="text" maxlength="16" id="username" class="col-sm-8 form-control form-control-sm"
 						th:field="*{username}" required />
 				</section>
 				<section class="row form-group">
 					<label for="password" class="col-sm-2 col-form-label">Contraseña:</label>
-					<input type="password" id="password" class="col-sm-8 form-control form-control-sm"
+					<input type="password" maxlength="16" id="password" class="col-sm-8 form-control form-control-sm"
 						th:field="*{password}" required />
 				</section>
 				<section class="row form-group">
@@ -99,14 +99,14 @@
 				</section>
 			</section>
 			<section class="form-group my-2">
-				<button type="button" class="col-sm-1 mx-1 btn btn-primary btn-sm" id="btnGuardar">Guardar</button>
+				<button type="submit" class="col-sm-1 mx-1 btn btn-primary btn-sm" id="btnGuardar">Guardar</button>
 				<a href="/trabajadores/lista" class="col-sm-1 mx-1 btn btn-danger btn-sm">Cancelar</a>
 			</section>
 		</form>
 	</main>
 
 	<script>
-		$('#btnGuardar').click(function () {
+		document.getElementById('trabajadorForm').addEventListener('submit', function () {
 			const form = document.getElementById('trabajadorForm');
 			const formData = new FormData(form);
 			const object = {};
